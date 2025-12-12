@@ -26,7 +26,8 @@ const CustomImage = ({ src, alt, width = 1920, height = 1080 }: ImageProps) => {
         alt={alt}
         width={width}
         height={height}
-        className="rounded-xl"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 768px, 832px"
+        className="rounded-xl w-full h-auto"
         style={{
           boxShadow:
             "0px 0px 0px 1px rgba(0, 0, 0, 0.06), 0px 1px 2px -1px rgba(0, 0, 0, 0.06), 0px 2px 4px 0px rgba(0, 0, 0, 0.04)",
