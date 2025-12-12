@@ -82,11 +82,11 @@ export default function RootLayout({
           <Tooltip.Provider>
             <div className="relative">
               <div className="relative mx-auto max-w-screen-xl min-h-screen flex flex-col">
-                <div className="absolute left-8 top-0 bottom-0 border-l border-dotted border-[var(--border)] border-opacity-40 h-full overflow-hidden"></div>
+                <div className="absolute left-4 md:left-8 top-0 bottom-0 border-l border-dotted border-[var(--border)] border-opacity-40 h-full overflow-hidden"></div>
 
-                <div className="absolute right-8 top-0 bottom-0 border-l border-dotted border-[var(--border)] border-opacity-40 h-full overflow-hidden"></div>
+                <div className="absolute right-4 md:right-8 top-0 bottom-0 border-l border-dotted border-[var(--border)] border-opacity-40 h-full overflow-hidden"></div>
 
-                <div className="px-[34px] root flex flex-col flex-1">
+                <div className="px-4 md:px-[34px] root flex flex-col flex-1">
                   <BackButton />
                   <div className="flex-1">{children}</div>
                 </div>

@@ -93,7 +93,7 @@ export default async function Post({ params }: { params: Promise<Params> }) {
 
   return (
     <div className="flex flex-col pb-8">
-      <div className="mx-auto max-w-[48rem] lg:max-w-[52rem] pt-3 md:pt-[5.3rem] pl-6 pr-6 md:pl-16 md:pr-16">
+      <div className="mx-auto max-w-[48rem] lg:max-w-[52rem] pt-3 md:pt-[5.3rem] pl-4 pr-4 md:pl-16 md:pr-16">
         <PostHeader
           title={metadata.title}
           date={metadata.date}
