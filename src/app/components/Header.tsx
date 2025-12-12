@@ -33,7 +33,7 @@ function Header() {
         </div>
       </div>
 
-      <hr className="border-t border-dotted relative w-screen left-[50%] right-[50%] -translate-x-[50%]" />
+      <hr className="border-t border-dotted relative w-[100svw] left-[50%] right-[50%] -translate-x-[50%]" />
     </div>
   );
 }

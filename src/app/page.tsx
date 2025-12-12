@@ -73,7 +73,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col p-0 font-[family-name:var(--font-geist-sans)]">
       <div
-        className="card-wrapper mr-10 hidden lg:block"
+        className="card-wrapper hidden lg:block"
         style={{ height: cardHeight, position: "absolute", top: 0, right: 0 }}
       >
         <Card />
@@ -87,7 +87,7 @@ export default function Home() {
         <div className="hero-section relative z-0" ref={heroRef} id="hero">
           <Hero />
         </div>
-        <hr className="border-t border-dotted w-full my-8" />
+        <hr className="border-t border-dotted relative w-[100svw] left-[50%] right-[50%] -translate-x-[50%] my-8" />
 
         <div
           className="relative min-h-[50vh] w-full z-0"
@@ -97,7 +97,7 @@ export default function Home() {
           <Projects />
         </div>
 
-        <hr className="border-t border-dotted w-full my-8" />
+        <hr className="border-t border-dotted relative w-[100svw] left-[50%] right-[50%] -translate-x-[50%] my-8" />
         <div
           className="relative min-h-[50vh] w-full z-0"
           ref={workRef}
@@ -105,11 +105,11 @@ export default function Home() {
         >
           <Work />
         </div>
-        <hr className="border-t border-dotted w-full my-8" />
+        <hr className="border-t border-dotted relative w-[100svw] left-[50%] right-[50%] -translate-x-[50%] my-8" />
         <div className="relative w-full z-0" ref={writingRef} id="writing">
           <Writing postsMetadata={postsMetadata} />
         </div>
-        <hr className="border-t border-dotted w-full my-8" />
+        <hr className="border-t border-dotted relative w-[100svw] left-[50%] right-[50%] -translate-x-[50%] my-8" />
         <Footer />
       </div>
     </div>

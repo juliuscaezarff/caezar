@@ -136,10 +136,10 @@ a:hover {
   background: #ffffff; 
   color: #0a0a0a; 
 }
-/* Global overflow settings to ensure card visibility */
 html, body {
-  overflow-x: visible !important;
+  overflow-x: clip !important;
   overflow-y: visible !important;
+  scrollbar-gutter: stable;
 }
 
 /* Disable any clipping or masking */
