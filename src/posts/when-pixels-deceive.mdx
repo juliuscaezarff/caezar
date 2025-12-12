@@ -1,0 +1,72 @@
+---
+title: "When Pixels Deceive"
+description: "Optical Alignment: when the “right” design looks wrong"
+date: "December 12, 2025"
+slug: "when-pixels-deceive"
+emoji: "👁️"
+---
+
+### Optical Alignment: when the “right” design looks wrong
+
+Over the past few months, I have been paying close attention to something that almost always goes unnoticed, even by experienced professionals: *optical alignment*.
+
+<br />
+
+In theory, aligning two things is simple. You place one next to the other, set the same paddings, the same distance, the same size, and you are done. But anyone who works with interfaces knows that it is not that straightforward. Sometimes everything is mathematically perfect, and it still looks wrong.
+
+<br />
+
+Why does this happen?
+
+Because our eyes do not follow mathematics. They follow perception.
+
+<br />
+
+Optical alignment is exactly that. It means adjusting elements not based on exact numeric values but based on what looks right. And this applies to everything. Components, inputs, icons, typography, cards, any element that depends on visual balance.
+
+<br />
+
+If you have read materials like [Jakub’s article](https://jakub.kr/components/optical-alignment) or the excellent [Logical vs Optical](https://blog.damato.design/posts/logical-optical/), you already know this topic goes much deeper than it seems at first glance. But even if you have never studied it, you have probably felt that subtle discomfort when looking at a layout and thinking something is wrong, without being able to explain exactly what it is.
+
+### When the eye beats the ruler
+
+Here is where things get interesting. In many cases, if you align everything strictly by the numbers, the final result will look pulled to one side.
+
+<br />
+
+![](/posts/optical_alignment_inputs.png)
+
+> **Caption:** comparison between mathematical alignment on the left and optical adjustment on the right. Notice how the padding values may be identical in the inspector, yet the visual adjustment made by eye creates a more balanced composition.
+
+<br />
+
+In practice, I aligned the text mathematically with the box in one example, and in the other, I made an optical adjustment. I intentionally left slightly different values, even if Figma or the inspector reports the same numbers. The result is visible. The second example looks more centered and harmonious.
+
+<br />
+
+A practical tip for developers: reducing the extra space above and below the text inside the box helps a lot. It makes the vertical space of the text more predictable and makes small optical corrections easier and more consistent. It does not replace a critical eye, but it reduces unexpected variations and gives you a more stable base to listen to what the visual balance demands.
+
+### Why this happens
+
+- Different shapes have different visual weights.
+- Typography, letterforms, border thickness, corner curvature, and the natural reading direction create optical illusions that make equal numeric values appear misaligned.
+- Icons often need to sit a few pixels higher.
+- Boxes with border radius frequently look larger than ones without it.
+- Visually centered text is almost never mathematically centered.
+- Relying only on exact measurements can make the layout look off, even if no tool reports an error.
+
+<br />
+
+### In the end
+
+If you take design and UI development seriously, understanding this is extremely worthwhile. Not to become another perfectionist obsessed with tiny three-pixel differences, but to build interfaces that truly look well balanced, intentional, and professional.
+
+<br />
+
+Mathematics is the starting point.
+
+<br />
+
+But the finishing touch, the part that truly separates an ordinary layout from a good one, comes from the eye.
+
+And with optical alignment, the eye always has the final word.
