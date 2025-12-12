@@ -3,12 +3,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import { ThemeProvider } from "./theme-provider";
 import Projects from "./components/Projects";
 import Work from "./components/Work";
-import Footer from "./components/Footer";
 import { Writing } from "./components/Writing";
+import type { PostMetadata } from "./components/Writing";
 import Card from "./components/Card";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const [cardHeight, setCardHeight] = useState("100vh");
@@ -17,6 +17,7 @@ export default function Home() {
   const projectsRef = useRef<HTMLDivElement>(null);
   const workRef = useRef<HTMLDivElement>(null);
   const writingRef = useRef<HTMLDivElement>(null);
+  const [postsMetadata, setPostsMetadata] = useState<PostMetadata[]>([]);
 
   // Calculate and update the card height based on content
   useEffect(() => {
@@ -57,6 +58,18 @@ export default function Home() {
     return () => window.removeEventListener("resize", calculateHeight);
   }, []);
 
+  // Fetch posts metadata
+  useEffect(() => {
+    fetch("/api/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        setPostsMetadata(data.postsMetadata ?? []);
+      })
+      .catch(() => {
+        setPostsMetadata([]);
+      });
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col p-0 font-[family-name:var(--font-geist-sans)]">
       <div
@@ -74,7 +87,7 @@ export default function Home() {
         <div className="hero-section relative z-0" ref={heroRef} id="hero">
           <Hero />
         </div>
-        <hr className="border-t border-dotted relative w-screen left-[50%] right-[50%] -translate-x-[50%] my-8" />
+        <hr className="border-t border-dotted w-full my-8" />
 
         <div
           className="relative min-h-[50vh] w-full z-0"
@@ -84,7 +97,7 @@ export default function Home() {
           <Projects />
         </div>
 
-        <hr className="border-t border-dotted relative w-screen left-[50%] right-[50%] -translate-x-[50%] my-8" />
+        <hr className="border-t border-dotted w-full my-8" />
         <div
           className="relative min-h-[50vh] w-full z-0"
           ref={workRef}
@@ -92,11 +105,11 @@ export default function Home() {
         >
           <Work />
         </div>
-        {/* <hr className="border-t border-dotted relative w-screen left-[50%] right-[50%] -translate-x-[50%] my-8" />
+        <hr className="border-t border-dotted w-full my-8" />
         <div className="relative w-full z-0" ref={writingRef} id="writing">
-          <Writing />
-        </div> */}
-        <hr className="border-t border-dotted relative w-screen left-[50%] right-[50%] -translate-x-[50%] my-8" />
+          <Writing postsMetadata={postsMetadata} />
+        </div>
+        <hr className="border-t border-dotted w-full my-8" />
         <Footer />
       </div>
     </div>

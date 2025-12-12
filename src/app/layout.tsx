@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Tooltip } from "@base-ui-components/react/tooltip";
 import "./globals.css";
 import { ThemeProvider } from "./theme-provider";
+import BackButton from "./components/ui/back-button";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -80,12 +81,15 @@ export default function RootLayout({
         <ThemeProvider defaultTheme="dark">
           <Tooltip.Provider>
             <div className="relative">
-              <div className="relative mx-auto max-w-screen-xl">
+              <div className="relative mx-auto max-w-screen-xl min-h-screen flex flex-col">
                 <div className="absolute left-8 top-0 bottom-0 border-l border-dotted border-[var(--border)] border-opacity-40 h-full overflow-hidden"></div>
 
                 <div className="absolute right-8 top-0 bottom-0 border-l border-dotted border-[var(--border)] border-opacity-40 h-full overflow-hidden"></div>
 
-                <div className="px-[34px] root">{children}</div>
+                <div className="px-[34px] root flex flex-col flex-1">
+                  <BackButton />
+                  <div className="flex-1">{children}</div>
+                </div>
               </div>
             </div>
           </Tooltip.Provider>

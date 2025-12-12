@@ -1,57 +1,49 @@
-import Link from "next/link";
+import { motion } from "motion/react";
+import PostPreview from "./posts/post-preview";
+import LinkArrow from "./ui/link-arrow";
 
-export interface Article {
-  date: string;
+export interface PostMetadata {
   title: string;
-  description: string;
   slug: string;
+  description: string;
+  date: string;
+  emoji: string;
 }
 
-interface WritingProps {
-  articles?: Article[];
+export interface BlogPageProps {
+  postsMetadata: PostMetadata[];
 }
 
-const defaultArticles: Article[] = [
-  {
-    date: "Nov 5, 2025",
-    title: "Optical Alignment",
-    description:
-      "Discover the tiny visual adjustments that make your designs look professional. Learn how optical alignment transforms your UI from good to exceptional.",
-    slug: "blog/optical-alignment",
-  },
-];
+export function Writing({ postsMetadata }: BlogPageProps) {
+  const sortedPostsMetadata = postsMetadata
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
 
-export function Writing({ articles = defaultArticles }: WritingProps) {
   return (
-    <div className="py-8 px-4">
-      <h1 className="text-3xl font-bold mb-6 text-[var(--foreground)]">writing</h1>
-
-      <div className="space-y-6 max-w-2xl">
-        {articles.map((article) => (
-          <article key={article.slug} className="group">
-            <div className="flex items-start gap-4">
-              <div className="flex flex-col items-start">
-                <div className="flex items-center gap-3">
-                  <div className="w-1 h-6 bg-[var(--muted-foreground)] rounded-full" />
-                  <time className="text-sm text-[var(--muted-foreground)]">
-                    {article.date}
-                  </time>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-3 ml-7">
-              <Link href={`/${article.slug}`}>
-                <h3 className="text-base font-medium text-[var(--foreground)] hover:opacity-80 transition-opacity cursor-pointer mb-2">
-                  {article.title}
-                </h3>
-              </Link>
-              <p className="text-sm text-[var(--muted-foreground)] leading-relaxed">
-                {article.description}
-              </p>
-            </div>
-          </article>
-        ))}
+    <div className="py-4 px-4">
+      <h1 className="text-3xl font-bold mb-6 text-[var(--foreground)]">
+        writing
+      </h1>
+      <div className="max-w-2xl">
+        <div className="flex justify-between pb-4 align-middle text-sm tracking-[0.01em] text-neutral-400">
+          <span>recent</span>
+          <LinkArrow href="/blog" className="flex w-fit text-sm text-neutral-400">
+            Older
+          </LinkArrow>
+        </div>
+        <ul className="flex flex-col pb-2">
+          {sortedPostsMetadata.map((postMetadata) => (
+            <motion.li key={postMetadata.slug}>
+              <PostPreview
+                title={postMetadata.title}
+                description={postMetadata.description}
+                date={postMetadata.date}
+                slug={postMetadata.slug}
+                showDate={false}
+              />
+            </motion.li>
+          ))}
+        </ul>
       </div>
     </div>
   );
