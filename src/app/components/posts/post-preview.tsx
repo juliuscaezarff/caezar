@@ -21,7 +21,9 @@ const PostPreview = ({
   return (
     <Link
       href={`/blog/${slug}`}
-      className={showDate ? "block w-full" : "inline-flex w-fit"}
+      className={`${
+        showDate ? "block w-full" : "inline-flex w-fit"
+      } no-underline hover:no-underline focus-visible:no-underline`}
     >
       <motion.div className="group flex justify-between pb-6">
         <div className="flex flex-col gap-1">

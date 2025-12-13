@@ -124,6 +124,9 @@ hr {
 
 a:hover {
   color: var(--link-foreground);
+}
+
+a:hover:not(.no-underline) {
   text-decoration: underline;
 }
 
