@@ -1,5 +1,6 @@
-"use client";
-import React, { useState } from "react";
+'use client';
+import React, { useState } from 'react';
+import LinkText from './md/LinkText';
 
 interface WorkExperienceProps {
   company: string;
@@ -222,19 +223,16 @@ const Work: React.FC = () => {
   // Work experience data structured in an array
   const workExperiences = [
     {
-      company: "Arete",
-      position: "Design Engineer",
-      logo: "/companies/arete.png",
-      website: "https://www.ostudioarete.com.br/",
+      company: 'Arete',
+      position: 'Design Engineer',
+      logo: '/companies/arete.png',
+      website: 'https://www.ostudioarete.com.br/',
       description: [
-        "Designed and developed client websites end-to-end, including email automation.",
+        'Designed and developed client websites end-to-end, including email automation.',
         <>
-          Built{" "}
-          <LinkWithTooltip
-            href="https://www.ostudioarete.com.br/"
-            text="Arete's"
-          />{" "}
-          own website as part of the studio's launch.
+          Built{' '}
+          <LinkText href="https://www.ostudioarete.com.br/">Arete&apos;s</LinkText>{' '}
+          own website as part of the studio&apos;s launch.
         </>,
       ],
     },

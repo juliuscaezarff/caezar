@@ -1,7 +1,8 @@
-"use client";
-import React from "react";
-import { SocialLink } from "./ui/SocialLinks";
-import { CustomTooltip } from "./ui/Tooltip";
+'use client';
+import React from 'react';
+import { SocialLink } from './ui/SocialLinks';
+import { CustomTooltip } from './ui/Tooltip';
+import LinkText from './md/LinkText';
 
 const Hero: React.FC = () => {
   return (
@@ -18,52 +19,49 @@ const Hero: React.FC = () => {
           <CustomTooltip
             text="frontend"
             content="React, Next.js, Vite, Turborepo, React Native, JavaScript, TypeScript, Tailwind, Shadcn/ui, Radix, Base UI"
+            underlined={false}
           />
           ,{" "}
           <CustomTooltip
             text="backend"
             content="Node.js, Bun, NestJS, Express, Drizzle, Prisma, Supabase, MongoDB, PostgreSQL, APIs RESTful, Webhooks, OAuth, Server Actions"
+            underlined={false}
           />
           ,{" "}
           <CustomTooltip
             text="tools"
             content="Git, GitHub, Docker, Vercel, Figma, Visual Studio Code, Stripe, CI/CD, Vitest, Jest"
+            underlined={false}
           />
           ,{" "}
           <CustomTooltip
             text="ai"
             content="TensorFlow, PyTorch, LangChain, Hugging Face"
+            underlined={false}
           />
           — whatever gets the job done.
         </p>
 
         <p className="mb-4 text-base text-[var(--foreground)]">
-          i launched the{" "}
-          <CustomTooltip
-            href="https://helpmind.com.br"
-            text="HelpMind"
-            content="online platform for psychologists with scheduling, sessions, and insights."
-          />
+          i launched the{' '}
+          <LinkText href="https://helpmind.com.br" subtle>
+            HelpMind
+          </LinkText>
           . <br />
-          {/* 3k downloads in 2 days. felt good. */}
         </p>
 
         <p className="text-base text-[var(--foreground)]">
           i’ve also won a few{" "}
-          <CustomTooltip text="hackathons" imageUrl="/hackhaton-preview.png" />
+          <CustomTooltip text="hackathons" imageUrl="/hackhaton-preview.png" underlined={false}/>
           <br />
           participated in events, wrote articles, and created projects.{" "}
         </p>
 
         <p className="mb-4 text-base text-[var(--foreground)]">
-          also coding in{" "}
-          <CustomTooltip
-            href="https://github.com/caezarff"
-            text="caezarLabs"
-            content={
-              <span>my lab for creating components, animations and ideas</span>
-            }
-          />
+          also coding in{' '}
+          <LinkText href="https://github.com/caezarff" subtle>
+            caezarLabs
+          </LinkText>
           .
         </p>
 
@@ -84,6 +82,7 @@ const Hero: React.FC = () => {
             text="skate"
             // content="playing skate."
             imageUrl="/skate.jpg"
+            underlined={false}
           />
           .
         </span>
