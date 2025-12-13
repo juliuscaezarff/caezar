@@ -17,6 +17,7 @@
     "@react-three/fiber": "^9.1.2",
     "@react-three/rapier": "^2.1.0",
     "@types/three": "^0.175.0",
+    "cambio": "^1.1.5",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
