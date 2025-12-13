@@ -11,9 +11,10 @@ import { useTheme } from "@/app/theme-provider";
 interface LinkTextProps {
   href: string;
   children: React.ReactNode;
+  subtle?: boolean;
 }
 
-const LinkText = ({ children, href }: LinkTextProps) => {
+const LinkText = ({ children, href, subtle }: LinkTextProps) => {
   const [isHovering, setIsHovering] = useState(false);
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
@@ -29,8 +30,20 @@ const LinkText = ({ children, href }: LinkTextProps) => {
       }}
       className={`group inline-block cursor-pointer underline transition-all duration-200 ease-in-out`}
       style={{
-        color: isDark ? "#ffffff" : "#171717",
-        textDecorationColor: isDark ? "rgba(255,255,255,0.7)" : "#a3a3a3",
+        color: subtle
+          ? isDark
+            ? "#d4d4d4"
+            : "#525252"
+          : isDark
+          ? "#ffffff"
+          : "#171717",
+        textDecorationColor: subtle
+          ? isDark
+            ? "rgba(212,212,212,0.6)"
+            : "#a3a3a3"
+          : isDark
+          ? "rgba(255,255,255,0.7)"
+          : "#a3a3a3",
       }}
     >
       {href.startsWith("http") && (
@@ -43,7 +56,11 @@ const LinkText = ({ children, href }: LinkTextProps) => {
         />
       )}
 
-      <p className="inline-block font-medium underline decoration-1 underline-offset-2 transition-all duration-200 ease-in-out">
+      <p
+        className={`inline-block underline decoration-1 underline-offset-2 transition-all duration-200 ease-in-out ${
+          subtle ? "font-normal" : "font-medium"
+        }`}
+      >
         {children}
       </p>
 
