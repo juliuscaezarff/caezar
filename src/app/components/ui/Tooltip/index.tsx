@@ -15,6 +15,7 @@ interface TooltipProps {
   href?: string;
   text?: string;
   showExternalIcon?: boolean;
+  underlined?: boolean;
 }
 
 const CustomTooltip: React.FC<TooltipProps> = ({
@@ -26,13 +27,19 @@ const CustomTooltip: React.FC<TooltipProps> = ({
   href,
   text,
   showExternalIcon = true,
+  underlined = true,
 }) => {
+  const baseTriggerClass =
+    "text-[var(--muted-foreground)] group inline-flex items-center";
+  const underlineClass = underlined
+    ? "decoration-[1px] underline dotted underline-offset-3 decoration-[var(--muted-foreground)]"
+    : "";
   const triggerContent = text ? (
     href ? (
       <motion.a
         href={href}
         target="_blank"
-        className="text-[var(--muted-foreground)] decoration-[1px] underline dotted underline-offset-3 decoration-[var(--muted-foreground)] group inline-flex items-center hover:text-[var(--link-foreground)]"
+        className={`${baseTriggerClass} ${underlineClass} hover:text-[var(--link-foreground)]`}
         whileHover="hover"
         initial="initial"
         variants={{
@@ -73,7 +80,7 @@ const CustomTooltip: React.FC<TooltipProps> = ({
       </motion.a>
     ) : (
       <motion.span
-        className="text-[var(--muted-foreground)] decoration-[1px] underline dotted underline-offset-3 decoration-[var(--muted-foreground)] group inline-flex items-center"
+        className={`${baseTriggerClass} ${underlineClass}`}
         whileHover="hover"
         initial="initial"
         variants={{
