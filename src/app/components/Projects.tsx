@@ -13,11 +13,12 @@ const projects = [
     preview: "/projects/helpmind-preview.png",
   },
   {
-    title: "Writingpad",
-    link: "https://writingpad.me",
-    logo: "/projects/writingpad.png",
-    description: "Minimal docs with markdown support and no account required.",
-    preview: "/projects/writingpad-preview.mov",
+    title: "Memora",
+    link: "https://memora-web-ten.vercel.app/",
+    logo: "/projects/brain.svg",
+    description:
+      "Memora is a place to organize and share your bookmarks, without the usual noise.",
+    preview: "/projects/memora-preview.png",
   },
   {
     title: "Troko",
