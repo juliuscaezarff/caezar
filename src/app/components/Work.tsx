@@ -1,6 +1,6 @@
-'use client';
-import React, { useState } from 'react';
-import LinkText from './md/LinkText';
+"use client";
+import React, { useState } from "react";
+import LinkText from "./md/LinkText";
 
 interface WorkExperienceProps {
   company: string;
@@ -168,70 +168,71 @@ const WorkExperienceItem: React.FC<WorkExperienceProps> = ({
 };
 
 // Collaboration logos component
-const CollaborationLogos: React.FC = () => {
-  // Company data structured in an array for better maintainability
-  const companies = [
-    {
-      name: "Vorld",
-      logo: "/companies/vorld.png",
-      website: "https://thevorld.com/",
-      zIndex: 40,
-    },
-    // {
-    //   name: "PCG",
-    //   logo: "/companies/pcg.png",
-    //   website: "https://powerclubglobal.com/",
-    //   zIndex: 30,
-    // },
-    // {
-    //   name: "Avocado",
-    //   logo: "/companies/avocado.jpg",
-    //   website: "https://instadapp.io/product/avocado",
-    //   zIndex: 20,
-    // },
-    // {
-    //   name: "Codedamn",
-    //   logo: "/companies/codedamn.jpg",
-    //   website: "https://codedamn.com/",
-    //   zIndex: 10,
-    // },
-  ];
+// const CollaborationLogos: React.FC = () => {
+//   const companies = [
+//     {
+//       name: "Vorld",
+//       logo: "/companies/vorld.png",
+//       website: "https://thevorld.com/",
+//       zIndex: 40,
+//     },
+//     {
+//       name: "PCG",
+//       logo: "/companies/pcg.png",
+//       website: "https://powerclubglobal.com/",
+//       zIndex: 30,
+//     },
+//     {
+//       name: "Avocado",
+//       logo: "/companies/avocado.jpg",
+//       website: "https://instadapp.io/product/avocado",
+//       zIndex: 20,
+//     },
+//     {
+//       name: "Codedamn",
+//       logo: "/companies/codedamn.jpg",
+//       website: "https://codedamn.com/",
+//       zIndex: 10,
+//     },
+//   ];
 
-  return (
-    <div className="mb-8">
-      <p className="text-xs text-[var(--muted-foreground)] mb-3">
-        also worked at
-      </p>
-      <div className="flex items-center">
-        <div className="relative flex">
-          {companies.map((company) => (
-            <CompanyLogo
-              key={company.name}
-              src={company.logo}
-              alt={`${company.name} logo`}
-              href={company.website}
-              zIndex={company.zIndex}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className="mb-8">
+//       <p className="text-xs text-[var(--muted-foreground)] mb-3">
+//         also worked at
+//       </p>
+//       <div className="flex items-center">
+//         <div className="relative flex">
+//           {companies.map((company) => (
+//             <CompanyLogo
+//               key={company.name}
+//               src={company.logo}
+//               alt={`${company.name} logo`}
+//               href={company.website}
+//               zIndex={company.zIndex}
+//             />
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
 
 const Work: React.FC = () => {
   // Work experience data structured in an array
   const workExperiences = [
     {
-      company: 'Arete',
-      position: 'Design Engineer',
-      logo: '/companies/arete.png',
-      website: 'https://www.ostudioarete.com.br/',
+      company: "Arete",
+      position: "Design Engineer",
+      logo: "/companies/arete.png",
+      website: "https://www.ostudioarete.com.br/",
       description: [
-        'Designed and developed client websites end-to-end, including email automation.',
+        "Designed and developed client websites end-to-end, including email automation.",
         <>
-          Built{' '}
-          <LinkText href="https://www.ostudioarete.com.br/">Arete&apos;s</LinkText>{' '}
+          Built{" "}
+          <LinkText href="https://www.ostudioarete.com.br/">
+            Arete&apos;s
+          </LinkText>{" "}
           own website as part of the studio&apos;s launch.
         </>,
       ],
@@ -263,7 +264,7 @@ const Work: React.FC = () => {
             description={work.description}
           />
         ))}
-        <CollaborationLogos />
+        {/*<CollaborationLogos />*/}
       </div>
     </div>
   );
