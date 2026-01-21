@@ -80,7 +80,7 @@ const CompanyLogo: React.FC<CompanyLogoProps> = ({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`relative w-12 h-12 rounded-full border-2 border-[var(--background)] overflow-hidden ${
+      className={`relative w-9 h-9 rounded-full border-2 border-[var(--background)] overflow-hidden ${
         zIndex < 40 ? "-ml-4" : ""
       } hover:z-50 transition-all duration-200 ${
         isHovered ? "scale-110 z-50" : `z-${zIndex}`
@@ -168,84 +168,65 @@ const WorkExperienceItem: React.FC<WorkExperienceProps> = ({
 };
 
 // Collaboration logos component
-// const CollaborationLogos: React.FC = () => {
-//   const companies = [
-//     {
-//       name: "Vorld",
-//       logo: "/companies/vorld.png",
-//       website: "https://thevorld.com/",
-//       zIndex: 40,
-//     },
-//     {
-//       name: "PCG",
-//       logo: "/companies/pcg.png",
-//       website: "https://powerclubglobal.com/",
-//       zIndex: 30,
-//     },
-//     {
-//       name: "Avocado",
-//       logo: "/companies/avocado.jpg",
-//       website: "https://instadapp.io/product/avocado",
-//       zIndex: 20,
-//     },
-//     {
-//       name: "Codedamn",
-//       logo: "/companies/codedamn.jpg",
-//       website: "https://codedamn.com/",
-//       zIndex: 10,
-//     },
-//   ];
+const CollaborationLogos: React.FC = () => {
+  const companies = [
+    {
+      name: "Vorld",
+      logo: "/companies/synapx.jpg",
+      website: "https://synapx.tech/",
+      zIndex: 40,
+    },
+  ];
 
-//   return (
-//     <div className="mb-8">
-//       <p className="text-xs text-[var(--muted-foreground)] mb-3">
-//         also worked at
-//       </p>
-//       <div className="flex items-center">
-//         <div className="relative flex">
-//           {companies.map((company) => (
-//             <CompanyLogo
-//               key={company.name}
-//               src={company.logo}
-//               alt={`${company.name} logo`}
-//               href={company.website}
-//               zIndex={company.zIndex}
-//             />
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+  return (
+    <div className="mb-8">
+      <p className="text-xs text-[var(--muted-foreground)] mb-3">
+        also worked at
+      </p>
+      <div className="flex items-center">
+        <div className="relative flex">
+          {companies.map((company) => (
+            <CompanyLogo
+              key={company.name}
+              src={company.logo}
+              alt={`${company.name} logo`}
+              href={company.website}
+              zIndex={company.zIndex}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 const Work: React.FC = () => {
   // Work experience data structured in an array
   const workExperiences = [
+    {
+      company: "Beyond The Bytes",
+      position: "Full Stack Engineer [Present]",
+      logo: "/companies/beyond.png",
+      website: "https://beyondthebytes.com.br/",
+      description: [
+        "Development and maintenance of front-end and back-end functionalities, with a focus on scalability and performance.",
+        "Active participation in technical and design decisions, code organization, and evolution of the production database.",
+      ],
+    },
     {
       company: "Arete",
       position: "Design Engineer",
       logo: "/companies/arete.png",
       website: "https://www.ostudioarete.com.br/",
       description: [
-        "Designed and developed client websites end-to-end, including email automation.",
+        "Direct involvement in interface design, focusing on usability, visual consistency, and attention to small details.",
         <>
           Built{" "}
-          <LinkText href="https://www.ostudioarete.com.br/">
+          <LinkText href="https://www.ostudioarete.com.br">
             Arete&apos;s
           </LinkText>{" "}
           own website as part of the studio&apos;s launch.
         </>,
-      ],
-    },
-    {
-      company: "Synapx Tech",
-      position: "Full Stack Developer",
-      logo: "/companies/synapx.jpg",
-      website: "https://synapx.tech/",
-      description: [
-        "Built and designed websites for clients, focusing on performance and usability.",
-        "Integrated analytics and lead capture systems to improve client conversion.",
-        "Developed AI automation agents to streamline workflows and user interactions.",
       ],
     },
   ];
@@ -264,7 +245,7 @@ const Work: React.FC = () => {
             description={work.description}
           />
         ))}
-        {/*<CollaborationLogos />*/}
+        <CollaborationLogos />
       </div>
     </div>
   );
